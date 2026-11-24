@@ -17,9 +17,22 @@ const reviewRoutes = require("./routes/reviewRoutes");
 
 const app = express();
 
+// Allowed frontend origins
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://vestora-pink.vercel.app",
+  "https://vestora-hvdvcrzb0-uttkarshasahajanand-4843.vercel.app"
+];
+
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:5173"
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
 }));
 
 app.use(express.json());
