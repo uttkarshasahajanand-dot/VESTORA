@@ -20,9 +20,8 @@ function Cart() {
     updateQuantity
   } = useCart();
 
-  const getPrice = (product) => {
-    return Number(product.discount_price || product.price || 0);
-  };
+  const getPrice = (product) =>
+    Number(product.discount_price || product.price || 0);
 
   const subtotal = cart.reduce(
     (total, item) =>
@@ -40,13 +39,22 @@ function Cart() {
     })}`;
 
   const handleCheckout = () => {
+    const invalidItem = cart.find(
+      (item) => !item.variant_id
+    );
+
+    if (invalidItem) {
+      alert(
+        `Please remove ${invalidItem.product_name} and add it again by selecting a size and colour.`
+      );
+      return;
+    }
+
     navigate("/checkout");
   };
 
   return (
     <div className="luxury-cart-page">
-
-      {/* CART HEADER */}
 
       <section className="cart-page-heading">
         <p>YOUR VESTORA EXPERIENCE</p>
@@ -60,9 +68,8 @@ function Cart() {
 
       {cart.length === 0 ? (
 
-        /* EMPTY CART */
-
         <section className="empty-cart">
+
           <div className="empty-cart-icon">
             <ShoppingBag size={45} strokeWidth={1.2} />
           </div>
@@ -82,15 +89,12 @@ function Cart() {
             CONTINUE SHOPPING
             <ArrowRight size={18} />
           </Link>
+
         </section>
 
       ) : (
 
-        /* CART CONTENT */
-
         <section className="luxury-cart-content">
-
-          {/* LEFT: CART ITEMS */}
 
           <div className="cart-items-section">
 
@@ -116,10 +120,8 @@ function Cart() {
               return (
                 <div
                   className="luxury-cart-item"
-                  key={item.product_id}
+                  key={`${item.product_id}-${item.variant_id}`}
                 >
-
-                  {/* PRODUCT IMAGE */}
 
                   <div className="cart-product-image">
                     {image ? (
@@ -133,8 +135,6 @@ function Cart() {
                       </div>
                     )}
                   </div>
-
-                  {/* PRODUCT DETAILS */}
 
                   <div className="cart-product-details">
 
@@ -152,7 +152,15 @@ function Cart() {
                       {formatPrice(price)}
                     </p>
 
-                    {/* QUANTITY */}
+                    <div className="cart-variant-details">
+                      <span>
+                        Size: <strong>{item.size || "N/A"}</strong>
+                      </span>
+
+                      <span>
+                        Colour: <strong>{item.color || "N/A"}</strong>
+                      </span>
+                    </div>
 
                     <div className="cart-quantity-control">
 
@@ -160,6 +168,7 @@ function Cart() {
                         onClick={() =>
                           updateQuantity(
                             item.product_id,
+                            item.variant_id,
                             item.quantity - 1
                           )
                         }
@@ -175,6 +184,7 @@ function Cart() {
                         onClick={() =>
                           updateQuantity(
                             item.product_id,
+                            item.variant_id,
                             item.quantity + 1
                           )
                         }
@@ -187,8 +197,6 @@ function Cart() {
 
                   </div>
 
-                  {/* REMOVE AND TOTAL */}
-
                   <div className="cart-item-actions">
 
                     <p>
@@ -198,7 +206,10 @@ function Cart() {
                     <button
                       className="cart-remove-button"
                       onClick={() =>
-                        removeFromCart(item.product_id)
+                        removeFromCart(
+                          item.product_id,
+                          item.variant_id
+                        )
                       }
                       aria-label={`Remove ${item.product_name}`}
                     >
@@ -218,8 +229,6 @@ function Cart() {
             </Link>
 
           </div>
-
-          {/* RIGHT: ORDER SUMMARY */}
 
           <aside className="luxury-order-summary">
 

@@ -13,6 +13,7 @@ const orderRoutes = require("./routes/orderRoutes");
 const myOrderRoutes = require("./routes/myOrderRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const adminProductRoutes = require("./routes/adminProductRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
 const app = express();
 
 // Middleware
@@ -30,6 +31,7 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/my-orders", myOrderRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/admin/products", adminProductRoutes);
+app.use("/api/reviews", reviewRoutes);
 // Health Check
 app.get("/", (req, res) => {
   res.json({

@@ -68,6 +68,17 @@ function Checkout() {
       return;
     }
 
+    const invalidItem = cart.find(
+      (item) => !item.variant_id
+    );
+
+    if (invalidItem) {
+      setError(
+        `Please remove ${invalidItem.product_name} and add it again after selecting a size and colour.`
+      );
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -85,6 +96,7 @@ function Checkout() {
         ...formData,
         items: cart.map((item) => ({
           product_id: item.product_id,
+          variant_id: item.variant_id,
           quantity: item.quantity
         }))
       };
@@ -143,8 +155,6 @@ function Checkout() {
   return (
     <div className="luxury-checkout-page">
 
-      {/* HEADER */}
-
       <section className="checkout-hero">
         <p>VESTORA — THE FINAL STEP</p>
 
@@ -169,11 +179,7 @@ function Checkout() {
         </div>
       </section>
 
-      {/* CHECKOUT CONTENT */}
-
       <section className="luxury-checkout-container">
-
-        {/* DELIVERY FORM */}
 
         <div className="luxury-checkout-form">
 
@@ -332,8 +338,6 @@ function Checkout() {
 
         </div>
 
-        {/* ORDER SUMMARY */}
-
         <aside className="luxury-checkout-summary">
 
           <p className="checkout-summary-eyebrow">
@@ -360,7 +364,7 @@ function Checkout() {
               return (
                 <div
                   className="luxury-checkout-product"
-                  key={item.product_id}
+                  key={`${item.product_id}-${item.variant_id}`}
                 >
 
                   <div className="checkout-product-image">
@@ -381,6 +385,14 @@ function Checkout() {
 
                     <p>
                       {item.brand || "VESTORA"}
+                    </p>
+
+                    <p>
+                      Size: {item.size || "N/A"}
+                    </p>
+
+                    <p>
+                      Colour: {item.color || "N/A"}
                     </p>
 
                     <strong>

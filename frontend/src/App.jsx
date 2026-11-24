@@ -12,6 +12,7 @@ import Register from "./pages/Register";
 import MyOrders from "./pages/MyOrders";
 import AdminDashboard from "./pages/AdminDashboard";
 import CategoryPage from "./pages/CategoryPage";
+import ProductDetails from "./pages/ProductDetails";
 
 import { CartProvider } from "./context/CartContext";
 
@@ -71,6 +72,14 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route
+  path="/category/:categoryName"
+  element={<CategoryPage />}
+/>
+<Route
+  path="/product/:id"
+  element={<ProductDetails />}
+/>
 
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

@@ -1,9 +1,9 @@
 
 const { pool } = require("../config/database");
 
-// Create a new order
+// CREATE A NEW ORDER
 const createOrder = async (req, res) => {
-  const connection = await pool.getConnection();
+  let connection;
 
   try {
     const userId = req.user.user_id;
@@ -39,6 +39,7 @@ const createOrder = async (req, res) => {
       });
     }
 
+    connection = await pool.getConnection();
     await connection.beginTransaction();
 
     const [addressResult] = await connection.query(
@@ -54,33 +55,65 @@ const createOrder = async (req, res) => {
     const orderItems = [];
 
     for (const item of items) {
+      const productId = Number(item.product_id);
+      const variantId = Number(item.variant_id);
       const quantity = Number(item.quantity);
 
-      if (!Number.isInteger(quantity) || quantity < 1) {
-        throw new Error("Invalid product quantity.");
+      if (
+        !Number.isInteger(productId) ||
+        productId < 1 ||
+        !Number.isInteger(variantId) ||
+        variantId < 1 ||
+        !Number.isInteger(quantity) ||
+        quantity < 1
+      ) {
+        throw new Error("Invalid product, variant or quantity.");
       }
 
-      const [products] = await connection.query(
-        `SELECT product_id, product_name, price, discount_price
-         FROM products
-         WHERE product_id = ? AND status = 'active'`,
-        [item.product_id]
+      // Validate product and lock selected variant stock
+      const [variants] = await connection.query(
+        `SELECT
+           pv.variant_id,
+           pv.product_id,
+           pv.size,
+           pv.color,
+           pv.stock_quantity,
+           p.product_name,
+           p.price,
+           p.discount_price
+         FROM product_variants pv
+         JOIN products p ON p.product_id = pv.product_id
+         WHERE pv.variant_id = ?
+           AND pv.product_id = ?
+           AND p.status = 'active'
+         FOR UPDATE`,
+        [variantId, productId]
       );
 
-      if (products.length === 0) {
-        throw new Error(`Product ${item.product_id} is unavailable.`);
+      if (variants.length === 0) {
+        throw new Error("Selected product variant is unavailable.");
       }
 
-      const product = products[0];
+      const variant = variants[0];
+
+      if (Number(variant.stock_quantity) < quantity) {
+        throw new Error(
+          `Insufficient stock for ${variant.product_name} (${variant.size}, ${variant.color}).`
+        );
+      }
 
       const price = Number(
-        product.discount_price || product.price
+        variant.discount_price || variant.price
       );
 
       totalAmount += price * quantity;
 
       orderItems.push({
-        product_name: product.product_name,
+        product_id: productId,
+        variant_id: variantId,
+        product_name: variant.product_name,
+        size: variant.size,
+        color: variant.color,
         quantity,
         price
       });
@@ -98,14 +131,25 @@ const createOrder = async (req, res) => {
     for (const item of orderItems) {
       await connection.query(
         `INSERT INTO order_items
-         (order_id, product_name, quantity, price)
-         VALUES (?, ?, ?, ?)`,
+         (order_id, variant_id, product_name, size, color, quantity, price)
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [
           orderId,
+          item.variant_id,
           item.product_name,
+          item.size,
+          item.color,
           item.quantity,
           item.price
         ]
+      );
+
+      // Reduce stock after successful order item insertion
+      await connection.query(
+        `UPDATE product_variants
+         SET stock_quantity = stock_quantity - ?
+         WHERE variant_id = ?`,
+        [item.quantity, item.variant_id]
       );
     }
 
@@ -119,7 +163,9 @@ const createOrder = async (req, res) => {
     });
 
   } catch (error) {
-    await connection.rollback();
+    if (connection) {
+      await connection.rollback();
+    }
 
     console.error("Order Error:", error.message);
 
@@ -129,12 +175,14 @@ const createOrder = async (req, res) => {
     });
 
   } finally {
-    connection.release();
+    if (connection) {
+      connection.release();
+    }
   }
 };
 
 
-// Get tracking details of customer's order
+// GET CUSTOMER ORDER TRACKING
 const getOrderTracking = async (req, res) => {
   try {
     const userId = req.user.user_id;

@@ -1,12 +1,11 @@
 
 const { pool } = require("../config/database");
 
-// Get orders belonging to the logged-in customer
+// GET ORDERS BELONGING TO THE LOGGED-IN CUSTOMER
 const getMyOrders = async (req, res) => {
   try {
     const userId = req.user.user_id;
 
-    // Fetch customer orders
     const [orders] = await pool.query(
       `SELECT
         o.order_id,
@@ -19,25 +18,30 @@ const getMyOrders = async (req, res) => {
         a.city,
         a.state,
         a.pincode
-      FROM orders o
-      LEFT JOIN addresses a ON o.address_id = a.address_id
-      WHERE o.user_id = ?
-      ORDER BY o.created_at DESC`,
+       FROM orders o
+       LEFT JOIN addresses a
+         ON o.address_id = a.address_id
+       WHERE o.user_id = ?
+       ORDER BY o.created_at DESC`,
       [userId]
     );
 
-    // Fetch products for each order
+    // FETCH PRODUCTS AND VARIANT INFORMATION FOR EACH ORDER
     for (const order of orders) {
       const [items] = await pool.query(
         `SELECT
-          order_item_id,
-          product_name,
-          size,
-          color,
-          quantity,
-          price
-        FROM order_items
-        WHERE order_id = ?`,
+          oi.order_item_id,
+          pv.product_id,
+          oi.variant_id,
+          oi.product_name,
+          oi.size,
+          oi.color,
+          oi.quantity,
+          oi.price
+         FROM order_items oi
+         LEFT JOIN product_variants pv
+           ON oi.variant_id = pv.variant_id
+         WHERE oi.order_id = ?`,
         [order.order_id]
       );
 

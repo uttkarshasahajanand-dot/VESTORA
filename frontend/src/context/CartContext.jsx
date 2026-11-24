@@ -1,3 +1,4 @@
+
 import {
   createContext,
   useContext,
@@ -9,46 +10,75 @@ const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState(() => {
-    const savedCart = localStorage.getItem("vestora_cart");
-    return savedCart ? JSON.parse(savedCart) : [];
+    try {
+      const savedCart = localStorage.getItem("vestora_cart");
+      return savedCart ? JSON.parse(savedCart) : [];
+    } catch {
+      return [];
+    }
   });
 
   useEffect(() => {
     localStorage.setItem("vestora_cart", JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (product) => {
+  // ADD PRODUCT WITH SELECTED VARIANT
+  const addToCart = (product, selectedVariant) => {
+    if (!selectedVariant?.variant_id) {
+      alert("Please select a size and colour.");
+      return;
+    }
+
     setCart((previousCart) => {
       const existing = previousCart.find(
-        (item) => item.product_id === product.product_id
+        (item) =>
+          item.product_id === product.product_id &&
+          item.variant_id === selectedVariant.variant_id
       );
 
       if (existing) {
         return previousCart.map((item) =>
-          item.product_id === product.product_id
+          item.product_id === product.product_id &&
+          item.variant_id === selectedVariant.variant_id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
 
-      return [...previousCart, { ...product, quantity: 1 }];
+      return [
+        ...previousCart,
+        {
+          ...product,
+          variant_id: selectedVariant.variant_id,
+          size: selectedVariant.size,
+          color: selectedVariant.color,
+          quantity: 1
+        }
+      ];
     });
   };
 
-  const removeFromCart = (productId) => {
+  // REMOVE PRODUCT VARIANT
+  const removeFromCart = (productId, variantId) => {
     setCart((previousCart) =>
       previousCart.filter(
-        (item) => item.product_id !== productId
+        (item) =>
+          !(
+            item.product_id === productId &&
+            item.variant_id === variantId
+          )
       )
     );
   };
 
-  const updateQuantity = (productId, quantity) => {
+  // UPDATE PRODUCT VARIANT QUANTITY
+  const updateQuantity = (productId, variantId, quantity) => {
     if (quantity < 1) return;
 
     setCart((previousCart) =>
       previousCart.map((item) =>
-        item.product_id === productId
+        item.product_id === productId &&
+        item.variant_id === variantId
           ? { ...item, quantity }
           : item
       )
