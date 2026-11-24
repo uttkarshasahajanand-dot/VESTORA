@@ -1,0 +1,6374 @@
+
+/* =================================
+   VESTORA - LUXURY GLOBAL STYLING
+================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app > main {
+  flex: 1;
+}
+
+/* ANNOUNCEMENT BAR */
+
+.announcement {
+  width: 100%;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #171714;
+  color: #ffffff;
+  padding: 8px 15px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-align: center;
+}
+
+/* GENERAL PAGE STYLING */
+
+.home-page,
+.category-page,
+.cart-page,
+.checkout-page,
+.orders-page {
+  width: 100%;
+  min-height: 70vh;
+  background: #ffffff;
+}
+
+.page-container {
+  width: 90%;
+  max-width: 1440px;
+  margin: auto;
+  padding: 60px 0;
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 500;
+  text-align: center;
+  color: #171714;
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #77756f;
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+/* PRODUCT GRID */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 22px;
+  width: 100%;
+}
+
+/* PRODUCT CARD */
+
+.product-card {
+  background: #ffffff;
+  position: relative;
+  min-width: 0;
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-image {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  background: #f5f3ef;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.06);
+}
+
+.product-info {
+  padding: 17px 5px;
+}
+
+.product-brand {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #b59a67;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.product-info h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #171714;
+  margin: 7px 0;
+}
+
+.product-info p {
+  font-size: 13px;
+  color: #77756f;
+}
+
+.product-price {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #171714;
+}
+
+.product-price del {
+  color: #99958d;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* ADD TO CART BUTTON */
+
+.add-to-cart {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  background: #171714;
+  border: 1px solid #171714;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background: transparent;
+  color: #171714;
+}
+
+/* OUT OF STOCK */
+
+.out-of-stock-label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  padding: 9px 13px;
+  background: #171714;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.out-of-stock-card .product-image img {
+  opacity: 0.75;
+}
+
+/* CATEGORY PAGE */
+
+.category-page {
+  padding: 50px 5%;
+}
+
+.category-heading {
+  text-align: center;
+  background: #f8f6f1;
+  padding: 65px 20px;
+  margin-bottom: 45px;
+}
+
+.category-heading p {
+  color: #b59a67;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.category-heading h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(35px, 5vw, 55px);
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.category-heading span {
+  color: #77756f;
+  font-size: 15px;
+}
+
+.category-page .product-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* GENERAL FORM STYLING */
+
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.07);
+}
+
+.form-container h1,
+.form-container h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-container label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-container input {
+  margin-bottom: 18px;
+}
+
+/* CART AND CHECKOUT */
+
+.cart-page,
+.checkout-page {
+  padding: 50px 5%;
+}
+
+.cart-page h1,
+.checkout-page h1,
+.orders-page h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* GENERAL TABLES */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+th {
+  background: #f8f6f1;
+  color: #171714;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 16px;
+}
+
+td {
+  padding: 16px;
+  border-bottom: 1px solid #eeeae1;
+  font-size: 14px;
+}
+
+/* EMPTY STATES */
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-state h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.empty-state p {
+  color: #77756f;
+  margin-bottom: 20px;
+}
+
+/* NOT FOUND */
+
+.not-found {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.not-found h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+}
+
+.not-found a {
+  padding: 13px 25px;
+  background: #171714;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1100px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .product-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
+  }
+
+  .product-image {
+    height: 250px;
+  }
+
+  .category-heading {
+    padding: 40px 15px;
+  }
+
+  .cart-page,
+  .checkout-page {
+    padding: 30px 4%;
+  }
+
+  .form-container {
+    width: 92%;
+    padding: 25px;
+  }
+
+  .page-container {
+    width: 92%;
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    gap: 16px 10px;
+  }
+
+  .product-image {
+    height: 210px;
+  }
+
+  .product-info h3 {
+    font-size: 14px;
+  }
+
+  .product-price {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 29px;
+  }
+
+  .announcement {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* =================================
+   VESTORA LUXURY NAVIGATION
+================================= */
+
+.luxury-header {
+  width: 100%;
+  min-height: 100px;
+  padding: 15px 5%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeae1;
+  position: relative;
+  z-index: 100;
+}
+
+/* LEFT NAVIGATION */
+
+.luxury-header .nav-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+}
+
+.luxury-header .nav-left > a {
+  position: relative;
+  color: #24231f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
+}
+
+.luxury-header .nav-left > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 1px;
+  background: #b59a67;
+  transition: width 0.3s ease;
+}
+
+.luxury-header .nav-left > a:hover {
+  color: #b59a67;
+}
+
+.luxury-header .nav-left > a:hover::after {
+  width: 100%;
+}
+
+/* CENTER LOGO */
+
+.luxury-header .nav-logo {
+  text-align: center;
+}
+
+.luxury-header .nav-logo a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #171714;
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.luxury-header .nav-logo a:hover {
+  color: #b59a67;
+}
+
+.luxury-header .nav-logo span {
+  margin-top: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #a08b64;
+}
+
+/* RIGHT NAVIGATION */
+
+.luxury-header .nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.luxury-header .desktop-account-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #24231f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.luxury-header .desktop-account-link:hover {
+  color: #b59a67;
+}
+
+.luxury-header .navbar-user {
+  color: #77756f;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.luxury-header .navbar-icon,
+.luxury-header .navbar-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #171714;
+  transition: color 0.3s ease;
+}
+
+.luxury-header .navbar-icon:hover,
+.luxury-header .navbar-cart:hover {
+  color: #b59a67;
+}
+
+.luxury-header .cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #b59a67;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* MOBILE MENU BUTTON */
+
+.mobile-menu-button {
+  display: none;
+  background: transparent;
+  color: #171714;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-account-links {
+  display: none;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .luxury-header {
+    padding: 15px 3%;
+  }
+
+  .luxury-header .nav-left {
+    gap: 15px;
+  }
+
+  .luxury-header .nav-left > a {
+    font-size: 10px;
+  }
+
+  .luxury-header .nav-right {
+    gap: 13px;
+  }
+
+  .luxury-header .nav-logo a {
+    font-size: 29px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+  .luxury-header {
+    min-height: 80px;
+    grid-template-columns: 45px 1fr 75px;
+    padding: 12px 5%;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .luxury-header .nav-logo {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .luxury-header .nav-logo a {
+    font-size: 27px;
+    letter-spacing: 5px;
+  }
+
+  .luxury-header .nav-logo span {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .luxury-header .nav-right {
+    grid-column: 3;
+    grid-row: 1;
+    gap: 12px;
+  }
+
+  .luxury-header .nav-right .navbar-user,
+  .luxury-header .nav-right .desktop-account-link,
+  .luxury-header .nav-right .logout-button {
+    display: none;
+  }
+
+  .luxury-header .nav-left {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 25px 6%;
+    background: #ffffff;
+    border-top: 1px solid #eeeae1;
+    border-bottom: 1px solid #eeeae1;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .luxury-header .nav-left.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .luxury-header .nav-left > a {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .mobile-account-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    padding-top: 18px;
+    border-top: 1px solid #eeeae1;
+  }
+
+  .mobile-account-links a,
+  .mobile-account-links button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: #171714;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+  .luxury-header {
+    padding: 12px 4%;
+  }
+
+  .luxury-header .nav-logo a {
+    font-size: 23px;
+  }
+
+  .luxury-header .nav-right {
+    gap: 9px;
+  }
+}
+
+/* =========================================
+   VESTORA LUXURY HOMEPAGE
+========================================= */
+
+.luxury-home {
+  background: #fff;
+  color: #171714;
+}
+
+/* HERO */
+
+.luxury-hero {
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #28251f;
+}
+
+.luxury-hero-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1483985988355-763728e1935b?w=2000");
+  background-size: cover;
+  background-position: center 35%;
+  transform: scale(1.02);
+}
+
+.luxury-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 15, 14, 0.78),
+    rgba(15, 15, 14, 0.25),
+    rgba(15, 15, 14, 0.05)
+  );
+}
+
+.luxury-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 650px;
+  max-width: 90%;
+  margin-left: 10%;
+  padding: 80px 0;
+  color: #fff;
+  animation: fadeIn 1s ease;
+}
+
+.hero-subtitle,
+.luxury-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #b59a67;
+  margin-bottom: 22px;
+}
+
+.luxury-hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 6vw, 78px);
+  font-weight: 400;
+  line-height: 1.12;
+  margin-bottom: 25px;
+}
+
+.hero-description {
+  max-width: 410px;
+  color: #e8e5df;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 35px;
+}
+
+.hero-button,
+.promo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 17px 25px;
+  background: #b59a67;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover,
+.promo-button:hover {
+  background: #fff;
+  color: #171714;
+  transform: translateY(-3px);
+}
+
+.hero-bottom-text {
+  position: absolute;
+  bottom: 28px;
+  right: 5%;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 3px;
+  z-index: 2;
+}
+
+/* INTRODUCTION */
+
+.luxury-intro {
+  padding: 110px 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.luxury-intro h2,
+.luxury-section-heading h2,
+.luxury-promo h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 49px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.luxury-intro > p:last-child {
+  max-width: 570px;
+  margin: 22px auto 0;
+  color: #77756f;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* SECTION HEADINGS */
+
+.luxury-categories,
+.luxury-featured {
+  padding: 70px 7%;
+}
+
+.luxury-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.luxury-section-heading .luxury-eyebrow {
+  margin-bottom: 12px;
+}
+
+.luxury-section-heading > span {
+  color: #99958d;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+/* CATEGORY GRID */
+
+.luxury-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.luxury-category-card {
+  position: relative;
+  display: block;
+  height: 420px;
+  overflow: hidden;
+  background: #eeeae1;
+}
+
+.luxury-category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.luxury-category-card:hover img {
+  transform: scale(1.08);
+}
+
+.luxury-category-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px;
+  color: #fff;
+  background: linear-gradient(
+    transparent 30%,
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+.luxury-category-overlay > span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #d7c49f;
+}
+
+.luxury-category-overlay h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.luxury-category-overlay p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* FEATURED PRODUCTS */
+
+.luxury-featured {
+  background: #f8f6f1;
+}
+
+.view-all-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #171714;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.view-all-link:hover {
+  color: #b59a67;
+}
+
+.luxury-loading,
+.luxury-error,
+.luxury-empty {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.luxury-loading p {
+  margin-top: 15px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #77756f;
+}
+
+.luxury-spinner {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #e5dfd3;
+  border-top-color: #b59a67;
+  border-radius: 50%;
+  margin: auto;
+  animation: luxurySpin 0.8s linear infinite;
+}
+
+@keyframes luxurySpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.luxury-error button {
+  margin-top: 15px;
+  background: #171714;
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 11px;
+}
+
+/* PROMOTIONAL BANNER */
+
+.luxury-promo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  background: #eeeae1;
+}
+
+.luxury-promo-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 70px 12%;
+}
+
+.luxury-promo-content h2 {
+  margin-bottom: 20px;
+}
+
+.luxury-promo-content > p:not(.luxury-eyebrow) {
+  max-width: 390px;
+  color: #77756f;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.luxury-promo-image {
+  min-height: 480px;
+  background-image: url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200");
+  background-size: cover;
+  background-position: center;
+}
+
+/* BENEFITS */
+
+.luxury-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 65px 7%;
+  gap: 30px;
+  border-bottom: 1px solid #eeeae1;
+}
+
+.benefit-item {
+  text-align: center;
+}
+
+.benefit-item svg {
+  color: #b59a67;
+  margin-bottom: 17px;
+}
+
+.benefit-item h3 {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  margin-bottom: 9px;
+}
+
+.benefit-item p {
+  font-size: 12px;
+  color: #858179;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .luxury-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .luxury-category-card {
+    height: 360px;
+  }
+
+  .luxury-hero {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 600px) {
+  .luxury-hero {
+    min-height: 520px;
+  }
+
+  .luxury-hero-content {
+    margin-left: 7%;
+  }
+
+  .luxury-hero-content h1 {
+    font-size: 46px;
+  }
+
+  .luxury-intro {
+    padding: 75px 22px;
+  }
+
+  .luxury-categories,
+  .luxury-featured {
+    padding: 55px 5%;
+  }
+
+  .luxury-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .luxury-category-grid {
+    gap: 12px;
+  }
+
+  .luxury-category-card {
+    height: 280px;
+  }
+
+  .luxury-category-overlay {
+    padding: 15px;
+  }
+
+  .luxury-category-overlay h3 {
+    font-size: 21px;
+  }
+
+  .luxury-promo {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-promo-content {
+    padding: 65px 8%;
+  }
+
+  .luxury-promo-image {
+    min-height: 350px;
+  }
+
+  .luxury-benefits {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 55px 20px;
+  }
+}
+
+/* =====================================
+   LUXURY CATEGORY PAGE
+===================================== */
+
+.luxury-category-page {
+  background: #fff;
+}
+
+/* CATEGORY HERO */
+
+.category-hero {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(
+      rgba(20, 19, 17, 0.65),
+      rgba(20, 19, 17, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1800")
+    center/cover;
+  color: #fff;
+}
+
+.category-hero-content > p {
+  color: #c5aa76;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.category-hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.category-hero-content > span {
+  color: #e8e5df;
+  font-size: 17px;
+}
+
+.category-breadcrumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.category-breadcrumb a {
+  color: #c5aa76;
+}
+
+/* PRODUCTS */
+
+.category-products-section {
+  padding: 75px 7%;
+}
+
+.category-products-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 45px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eeeae1;
+}
+
+.category-eyebrow {
+  color: #b59a67;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.category-products-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.category-count {
+  margin-top: 12px;
+  color: #858179;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.category-sort {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #77756f;
+}
+
+.category-sort select {
+  min-width: 190px;
+  padding: 13px 15px;
+  border: 1px solid #e5dfd3;
+  background: #fff;
+  color: #171714;
+  font-size: 14px;
+}
+
+/* PRODUCT GRID */
+
+.category-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px 20px;
+}
+
+.category-loading,
+.category-message {
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.category-loading p {
+  margin-top: 18px;
+  color: #77756f;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.category-message h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.category-message p {
+  color: #77756f;
+  font-size: 16px;
+}
+
+.category-back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 25px;
+  background: #171714;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .category-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .category-products-section {
+    padding: 50px 5%;
+  }
+
+  .category-products-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .category-products-heading h2 {
+    font-size: 31px;
+  }
+
+  .category-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
+  }
+
+  .category-hero {
+    min-height: 280px;
+  }
+
+  .category-hero-content > span {
+    font-size: 14px;
+  }
+
+  .category-sort,
+  .category-sort select {
+    width: 100%;
+  }
+}
+
+/* =====================================
+   VESTORA LUXURY SHOPPING CART
+===================================== */
+
+.luxury-cart-page {
+  background: #fff;
+  min-height: 75vh;
+  padding-bottom: 80px;
+}
+
+/* PAGE HEADING */
+
+.cart-page-heading {
+  text-align: center;
+  padding: 75px 20px 65px;
+  background: #f8f6f1;
+}
+
+.cart-page-heading > p {
+  color: #b59a67;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.cart-page-heading h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 5vw, 58px);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.cart-page-heading > span {
+  color: #77756f;
+  font-size: 17px;
+}
+
+/* EMPTY CART */
+
+.empty-cart {
+  max-width: 650px;
+  margin: 75px auto;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.empty-cart-icon {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  background: #f8f6f1;
+  color: #b59a67;
+}
+
+.cart-eyebrow {
+  color: #b59a67;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.empty-cart h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.empty-cart > p:not(.cart-eyebrow) {
+  color: #77756f;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.cart-shop-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 17px 28px;
+  background: #171714;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.cart-shop-button:hover {
+  background: #b59a67;
+  transform: translateY(-3px);
+}
+
+/* CART LAYOUT */
+
+.luxury-cart-content {
+  width: 88%;
+  max-width: 1400px;
+  margin: 65px auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.8fr);
+  align-items: start;
+  gap: 55px;
+}
+
+/* CART ITEMS */
+
+.cart-items-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e9e4da;
+  margin-bottom: 10px;
+}
+
+.cart-items-heading h2,
+.luxury-order-summary h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.cart-items-heading span {
+  color: #89857d;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.luxury-cart-item {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
+  gap: 25px;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid #eeeae1;
+}
+
+.cart-product-image {
+  width: 150px;
+  height: 175px;
+  background: #f5f3ee;
+  overflow: hidden;
+}
+
+.cart-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cart-product-image:hover img {
+  transform: scale(1.06);
+}
+
+.cart-no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 12px;
+}
+
+.cart-product-brand {
+  color: #b59a67;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.cart-product-details h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+.cart-product-category {
+  color: #89857d;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.cart-product-price {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* QUANTITY */
+
+.cart-quantity-control {
+  width: 115px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e5dfd3;
+}
+
+.cart-quantity-control button {
+  width: 35px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #171714;
+}
+
+.cart-quantity-control button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.cart-quantity-control span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cart-item-actions {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cart-item-actions > p {
+  font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cart-remove-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  color: #88837b;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.cart-remove-button:hover {
+  color: #b33b32;
+}
+
+/* CONTINUE SHOPPING */
+
+.cart-continue-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  color: #171714;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.cart-continue-link:hover {
+  color: #b59a67;
+}
+
+/* ORDER SUMMARY */
+
+.luxury-order-summary {
+  position: sticky;
+  top: 25px;
+  padding: 35px 30px;
+  background: #f8f6f1;
+  border: 1px solid #eeeae1;
+}
+
+.luxury-order-summary h2 {
+  margin-bottom: 35px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: #66635d;
+  font-size: 16px;
+}
+
+.summary-line span:last-child {
+  color: #171714;
+  font-weight: 600;
+}
+
+.summary-shipping-note {
+  color: #a08b64;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 5px 0 25px;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #ded8cc;
+  margin: 25px 0;
+}
+
+.summary-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-total span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.summary-total strong {
+  font-size: 23px;
+}
+
+.summary-tax-note {
+  color: #88837b;
+  font-size: 12px;
+  margin-bottom: 28px;
+}
+
+.cart-checkout-button {
+  width: 100%;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #171714;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cart-checkout-button:hover {
+  background: #b59a67;
+  transform: translateY(-2px);
+}
+
+.cart-secure-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 22px;
+  color: #88837b;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .luxury-cart-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .luxury-order-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-page-heading {
+    padding: 55px 15px;
+  }
+
+  .cart-page-heading > span {
+    font-size: 14px;
+  }
+
+  .luxury-cart-content {
+    width: 92%;
+    margin: 35px auto;
+  }
+
+  .luxury-cart-item {
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 15px;
+    position: relative;
+    padding: 20px 0;
+  }
+
+  .cart-product-image {
+    width: 105px;
+    height: 140px;
+  }
+
+  .cart-product-details h3 {
+    font-size: 18px;
+  }
+
+  .cart-product-price {
+    font-size: 16px;
+  }
+
+  .cart-item-actions {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .cart-item-actions > p {
+    font-size: 15px;
+  }
+
+  .cart-remove-button {
+    font-size: 10px;
+  }
+
+  .luxury-order-summary {
+    padding: 28px 20px;
+  }
+
+  .empty-cart h2 {
+    font-size: 28px;
+  }
+}
+
+/* =====================================
+   VESTORA LUXURY CHECKOUT
+===================================== */
+
+.luxury-checkout-page {
+  background: #fff;
+  min-height: 80vh;
+}
+
+/* CHECKOUT HERO */
+
+.checkout-hero {
+  padding: 65px 20px 55px;
+  text-align: center;
+  background: #f8f6f1;
+}
+
+.checkout-hero > p {
+  color: #b59a67;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.checkout-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(40px, 5vw, 57px);
+  font-weight: 400;
+  margin-bottom: 13px;
+}
+
+.checkout-hero > span {
+  color: #77756f;
+  font-size: 16px;
+}
+
+.checkout-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin-top: 35px;
+}
+
+.checkout-step {
+  color: #aaa69e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.checkout-step.completed,
+.checkout-step.active {
+  color: #a08b64;
+}
+
+/* MAIN LAYOUT */
+
+.luxury-checkout-container {
+  width: 88%;
+  max-width: 1350px;
+  margin: 65px auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(330px, 0.85fr);
+  gap: 65px;
+  align-items: start;
+}
+
+/* FORM HEADING */
+
+.checkout-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 20px;
+}
+
+.checkout-heading-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f6f1;
+  color: #b59a67;
+}
+
+.checkout-section-heading > div:last-child > p {
+  color: #b59a67;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.checkout-section-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.checkout-form-description {
+  color: #77756f;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+/* FORM INPUTS */
+
+.checkout-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 23px;
+}
+
+.checkout-input-group label {
+  color: #555149;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.checkout-input-group input,
+.checkout-input-group textarea {
+  width: 100%;
+  min-height: 55px;
+  padding: 15px 17px;
+  border: 1px solid #e5dfd3;
+  border-radius: 0;
+  outline: none;
+  background: #fff;
+  color: #171714;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.checkout-input-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.checkout-input-group input:focus,
+.checkout-input-group textarea:focus {
+  border-color: #b59a67;
+}
+
+.checkout-input-group input::placeholder,
+.checkout-input-group textarea::placeholder {
+  color: #aaa69e;
+}
+
+.checkout-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* DELIVERY NOTE */
+
+.checkout-delivery-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  margin: 15px 0 25px;
+  background: #f8f6f1;
+  color: #a08b64;
+}
+
+.checkout-delivery-note strong {
+  color: #171714;
+  font-size: 15px;
+}
+
+.checkout-delivery-note p {
+  color: #77756f;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* PLACE ORDER */
+
+.luxury-place-order-button {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background: #171714;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.luxury-place-order-button:hover:not(:disabled) {
+  background: #b59a67;
+  transform: translateY(-2px);
+}
+
+.luxury-place-order-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ERROR */
+
+.luxury-checkout-error {
+  padding: 15px;
+  margin-bottom: 25px;
+  border: 1px solid #e3b5b1;
+  background: #fff4f3;
+  color: #a52f29;
+  font-size: 14px;
+}
+
+/* ORDER SUMMARY */
+
+.luxury-checkout-summary {
+  padding: 35px 30px;
+  background: #f8f6f1;
+  border: 1px solid #eeeae1;
+}
+
+.checkout-summary-eyebrow {
+  color: #b59a67;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 12px;
+}
+
+.luxury-checkout-summary h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.checkout-item-count {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: #88837b;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+/* SUMMARY PRODUCTS */
+
+.checkout-summary-products {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.luxury-checkout-product {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.checkout-product-image {
+  position: relative;
+  width: 85px;
+  height: 100px;
+  flex-shrink: 0;
+  background: #eeeae1;
+}
+
+.checkout-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkout-product-image > div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a08b64;
+  font-size: 10px;
+}
+
+.checkout-product-image > span {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #b59a67;
+  color: #fff;
+  font-size: 11px;
+}
+
+.checkout-product-info h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.checkout-product-info p {
+  color: #89857d;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.checkout-product-info strong {
+  font-size: 15px;
+}
+
+/* SUMMARY TOTALS */
+
+.checkout-summary-divider {
+  height: 1px;
+  background: #ded8cc;
+  margin: 25px 0;
+}
+
+.checkout-price-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+  color: #66635d;
+  font-size: 15px;
+}
+
+.checkout-price-row span:last-child {
+  color: #171714;
+  font-weight: 600;
+}
+
+.checkout-free-shipping {
+  color: #a08b64;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.checkout-final-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-final-total span {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.checkout-final-total strong {
+  font-size: 24px;
+}
+
+.checkout-tax-note {
+  margin-top: 10px;
+  color: #89857d;
+  font-size: 12px;
+}
+
+/* SECURITY */
+
+.checkout-security {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e5dfd3;
+  color: #a08b64;
+}
+
+.checkout-security strong {
+  color: #171714;
+  font-size: 14px;
+}
+
+.checkout-security p {
+  color: #89857d;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* EMPTY CHECKOUT */
+
+.luxury-checkout-empty {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.luxury-checkout-empty > svg {
+  color: #b59a67;
+  margin-bottom: 25px;
+}
+
+.luxury-checkout-empty h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.luxury-checkout-empty p {
+  color: #77756f;
+  margin: 15px 0 25px;
+}
+
+.checkout-back-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 25px;
+  background: #171714;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+  .luxury-checkout-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkout-hero {
+    padding: 50px 18px;
+  }
+
+  .checkout-hero > span {
+    font-size: 14px;
+  }
+
+  .checkout-steps {
+    gap: 15px;
+  }
+
+  .checkout-step {
+    font-size: 9px;
+  }
+
+  .luxury-checkout-container {
+    width: 92%;
+    margin: 40px auto;
+  }
+
+  .checkout-two-column {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .luxury-checkout-summary {
+    padding: 27px 20px;
+  }
+
+  .checkout-section-heading h2 {
+    font-size: 25px;
+  }
+}
+
+/* =====================================
+   VESTORA LUXURY LOGIN PAGE
+===================================== */
+
+.luxury-auth-page {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+}
+
+/* LEFT IMAGE */
+
+.luxury-auth-image {
+  min-height: 750px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 65px;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.05)
+    ),
+    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85")
+    center/cover no-repeat;
+}
+
+.auth-image-overlay {
+  color: #fff;
+  max-width: 480px;
+}
+
+.auth-image-overlay > p {
+  color: #d2b985;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.auth-image-overlay h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 5vw, 65px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.auth-image-overlay span {
+  font-size: 15px;
+  color: #eee;
+  line-height: 1.8;
+}
+
+/* RIGHT CONTENT */
+
+.luxury-auth-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 35px;
+}
+
+.luxury-auth-box {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* BRAND */
+
+.auth-brand {
+  display: block;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 43px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: #171714;
+  margin-bottom: 55px;
+}
+
+/* HEADING */
+
+.auth-eyebrow {
+  color: #b59a67;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 13px;
+}
+
+.luxury-auth-box > h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  font-weight: 400;
+  margin-bottom: 13px;
+}
+
+.auth-description {
+  color: #77756f;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+/* INPUTS */
+
+.luxury-auth-field {
+  margin-bottom: 25px;
+}
+
+.luxury-auth-field > label {
+  display: block;
+  color: #555149;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 11px;
+}
+
+.auth-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 58px;
+  padding: 0 17px;
+  border: 1px solid #e5dfd3;
+  color: #a08b64;
+  transition: border-color 0.3s ease;
+}
+
+.auth-input-wrapper:focus-within {
+  border-color: #b59a67;
+}
+
+.auth-input-wrapper input {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #171714;
+  font-size: 15px;
+  box-shadow: none;
+}
+
+.auth-input-wrapper input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.auth-input-wrapper input::placeholder {
+  color: #aaa69e;
+}
+
+.auth-password-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #89857d;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.auth-password-toggle:hover {
+  color: #b59a67;
+}
+
+/* LOGIN BUTTON */
+
+.luxury-auth-button {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 12px;
+  background: #171714;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.luxury-auth-button:hover:not(:disabled) {
+  background: #b59a67;
+  transform: translateY(-2px);
+}
+
+.luxury-auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ERROR */
+
+.luxury-auth-error {
+  padding: 14px;
+  margin-bottom: 22px;
+  border: 1px solid #e3b5b1;
+  background: #fff4f3;
+  color: #a52f29;
+  font-size: 14px;
+}
+
+/* REGISTER LINK */
+
+.auth-register-link {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.auth-register-link span {
+  color: #77756f;
+}
+
+.auth-register-link a {
+  color: #a08b64;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.auth-register-link a:hover {
+  color: #171714;
+}
+
+/* BOTTOM NOTE */
+
+.auth-bottom-note {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 65px;
+  padding-top: 22px;
+  border-top: 1px solid #eeeae1;
+}
+
+.auth-bottom-note span {
+  color: #aaa69e;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .luxury-auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-auth-image {
+    min-height: 350px;
+    padding: 40px;
+  }
+
+  .luxury-auth-content {
+    padding: 55px 25px;
+  }
+
+  .auth-brand {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .luxury-auth-image {
+    min-height: 280px;
+    padding: 25px;
+  }
+
+  .auth-image-overlay h1 {
+    font-size: 39px;
+  }
+
+  .luxury-auth-content {
+    padding: 45px 20px;
+  }
+
+  .luxury-auth-box > h2 {
+    font-size: 29px;
+  }
+
+  .auth-brand {
+    font-size: 35px;
+  }
+}
+
+/* =================================
+   LUXURY REGISTER PAGE
+================================= */
+
+.luxury-auth-page {
+  min-height: 780px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f8f6f1;
+}
+
+.luxury-auth-image {
+  min-height: 780px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 75px;
+  background-size: cover;
+  background-position: center;
+  background-color: #29251f;
+}
+
+.register-image {
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(15, 14, 12, 0.85),
+      rgba(15, 14, 12, 0.12)
+    ),
+    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200");
+}
+
+.auth-image-overlay {
+  color: #fff;
+  max-width: 480px;
+}
+
+.auth-eyebrow {
+  display: block;
+  color: #b59a67;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.auth-image-overlay h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.15;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+.auth-image-overlay p {
+  color: #e1ddd5;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 390px;
+}
+
+.auth-image-line {
+  width: 65px;
+  height: 1px;
+  background: #b59a67;
+  margin: 30px 0 18px;
+}
+
+.auth-image-caption {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #d6c6a6;
+}
+
+.luxury-auth-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 35px;
+}
+
+.luxury-auth-box {
+  width: 100%;
+  max-width: 440px;
+}
+
+.luxury-auth-box h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 500;
+  color: #171714;
+  margin-bottom: 10px;
+}
+
+.auth-description {
+  color: #858078;
+  font-size: 13px;
+  margin-bottom: 35px;
+}
+
+.luxury-auth-error {
+  padding: 13px 15px;
+  margin-bottom: 20px;
+  background: #fff0ee;
+  color: #b42318;
+  font-size: 13px;
+  border-left: 3px solid #b42318;
+}
+
+.luxury-input-group {
+  margin-bottom: 23px;
+}
+
+.luxury-input-group label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #45433e;
+  margin-bottom: 10px;
+}
+
+.luxury-input-wrapper {
+  min-height: 53px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  border: 1px solid #dedbd3;
+  background: #fff;
+  color: #a18b64;
+  transition: border-color 0.3s ease;
+}
+
+.luxury-input-wrapper:focus-within {
+  border-color: #b59a67;
+}
+
+.luxury-input-wrapper input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #171714;
+  font-size: 13px;
+}
+
+.luxury-input-wrapper input:focus {
+  box-shadow: none;
+}
+
+.luxury-input-wrapper input::placeholder {
+  color: #aaa69e;
+}
+
+.luxury-input-group small {
+  display: block;
+  color: #99948b;
+  font-size: 10px;
+  margin-top: 7px;
+}
+
+.password-toggle {
+  background: transparent;
+  color: #9c845b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.luxury-auth-button {
+  width: 100%;
+  min-height: 55px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: #171714;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.luxury-auth-button:hover {
+  background: #b59a67;
+}
+
+.luxury-auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-secure-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 23px;
+  color: #88837a;
+  font-size: 11px;
+}
+
+.auth-secure-note svg {
+  color: #a18b64;
+}
+
+.luxury-auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0 20px;
+}
+
+.luxury-auth-divider::before,
+.luxury-auth-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #e1ddd5;
+}
+
+.luxury-auth-divider span {
+  color: #99948b;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.luxury-auth-secondary-button {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #b59a67;
+  color: #171714;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.luxury-auth-secondary-button:hover {
+  background: #b59a67;
+  color: #fff;
+}
+
+/* RESPONSIVE REGISTER PAGE */
+
+@media (max-width: 850px) {
+  .luxury-auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-auth-image {
+    min-height: 350px;
+    padding: 45px;
+  }
+
+  .auth-image-overlay h1 {
+    font-size: 45px;
+  }
+
+  .luxury-auth-content {
+    padding: 55px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .luxury-auth-image {
+    min-height: 280px;
+    padding: 30px;
+  }
+
+  .auth-image-overlay h1 {
+    font-size: 36px;
+  }
+
+  .luxury-auth-content {
+    padding: 45px 20px;
+  }
+
+  .luxury-auth-box h2 {
+    font-size: 34px;
+  }
+}
+
+/* =================================
+   VESTORA LUXURY MY ORDERS PAGE
+================================= */
+
+.luxury-orders-page {
+  min-height: 75vh;
+  background: #f8f6f1;
+  padding-bottom: 80px;
+}
+
+/* HERO */
+
+.orders-hero {
+  padding: 65px 20px;
+  text-align: center;
+  background: #171714;
+  color: white;
+}
+
+.orders-hero > span {
+  color: #b59a67;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.orders-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  font-weight: 500;
+  margin: 15px 0;
+}
+
+.orders-hero p {
+  color: #c5c0b7;
+  font-size: 13px;
+}
+
+/* MAIN CONTAINER */
+
+.orders-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 55px auto 0;
+}
+
+.orders-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.orders-section-heading span {
+  color: #a18b64;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.orders-section-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 31px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.orders-count {
+  padding: 10px 15px;
+  border: 1px solid #d9d3c7;
+  color: #777167;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* ORDER CARD */
+
+.luxury-order-card {
+  margin-bottom: 25px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #e9e5dc;
+  transition: box-shadow 0.3s ease;
+}
+
+.luxury-order-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ORDER HEADER */
+
+.luxury-order-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eeeae1;
+}
+
+.order-number span,
+.order-date span {
+  display: block;
+  color: #99948b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 7px;
+}
+
+.order-number h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.order-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #a18b64;
+}
+
+.order-date p {
+  color: #4f4b43;
+  font-size: 12px;
+}
+
+/* ORDER STATUS */
+
+.luxury-order-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  background: #f1eee7;
+  color: #82704d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.luxury-order-status.delivered {
+  background: #edf5ee;
+  color: #327447;
+}
+
+.luxury-order-status.shipped {
+  background: #edf2f8;
+  color: #42688c;
+}
+
+.luxury-order-status.cancelled {
+  background: #fceeed;
+  color: #b74740;
+}
+
+.luxury-order-status.confirmed {
+  background: #f4f0e5;
+  color: #987638;
+}
+
+/* PRODUCTS */
+
+.luxury-order-products {
+  padding: 20px 0;
+}
+
+.luxury-order-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 0;
+  border-bottom: 1px solid #f0ede7;
+}
+
+.luxury-order-product:last-child {
+  border-bottom: none;
+}
+
+.order-product-details h4 {
+  color: #24231f;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.order-product-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.order-product-meta span {
+  color: #89847a;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.order-product-price {
+  color: #29271f;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ADDRESS */
+
+.luxury-order-address {
+  padding: 20px;
+  background: #f8f6f1;
+}
+
+.address-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+  color: #a18b64;
+}
+
+.address-heading h4 {
+  color: #454139;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.address-details {
+  padding-left: 27px;
+}
+
+.address-details strong {
+  color: #24231f;
+  font-size: 12px;
+}
+
+.address-details p {
+  color: #77736a;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* ORDER FOOTER */
+
+.luxury-order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 22px;
+  margin-top: 20px;
+  border-top: 1px solid #eeeae1;
+}
+
+.luxury-order-footer span {
+  color: #77736a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.luxury-order-footer strong {
+  color: #171714;
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+}
+
+/* EMPTY ORDERS */
+
+.luxury-orders-empty {
+  padding: 65px 25px;
+  background: white;
+  border: 1px solid #e9e5dc;
+  text-align: center;
+}
+
+.empty-order-icon {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f6f1;
+  color: #a18b64;
+  border-radius: 50%;
+}
+
+.luxury-orders-empty > span {
+  color: #a18b64;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.luxury-orders-empty h2 {
+  margin: 15px 0;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.luxury-orders-empty p {
+  max-width: 430px;
+  margin: 0 auto 25px;
+  color: #858078;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.luxury-order-button {
+  min-height: 48px;
+  padding: 0 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #171714;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: background 0.3s ease;
+}
+
+.luxury-order-button:hover {
+  background: #b59a67;
+}
+
+/* LOADING */
+
+.luxury-orders-loading {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: #f8f6f1;
+  color: #a18b64;
+}
+
+.luxury-orders-loading p {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.loading-icon {
+  animation: orderSpin 1.5s linear infinite;
+}
+
+@keyframes orderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+  .orders-hero {
+    padding: 45px 20px;
+  }
+
+  .orders-hero h1 {
+    font-size: 40px;
+  }
+
+  .orders-container {
+    width: 92%;
+    margin-top: 35px;
+  }
+
+  .orders-section-heading h2 {
+    font-size: 25px;
+  }
+
+  .luxury-order-card {
+    padding: 18px;
+  }
+
+  .luxury-order-header {
+    align-items: flex-start;
+  }
+
+  .order-date {
+    width: 100%;
+  }
+
+  .luxury-order-status {
+    margin-left: auto;
+  }
+
+  .order-product-details h4 {
+    font-size: 16px;
+  }
+
+  .luxury-order-footer strong {
+    font-size: 20px;
+  }
+
+  .luxury-orders-empty {
+    padding: 45px 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .luxury-order-header {
+    flex-direction: column;
+  }
+
+  .luxury-order-status {
+    margin-left: 0;
+  }
+
+  .luxury-order-footer {
+    gap: 10px;
+  }
+
+  .luxury-order-footer span {
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   VESTORA LUXURY ADMIN DASHBOARD
+========================================= */
+
+.luxury-admin-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f6f5f1;
+  color: #22211e;
+}
+
+/* SIDEBAR */
+
+.luxury-admin-sidebar {
+  width: 265px;
+  min-width: 265px;
+  min-height: 100vh;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  background: #171714;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 200;
+}
+
+.luxury-admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 5px 8px 35px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.admin-brand-icon {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #b59a67;
+  color: #b59a67;
+}
+
+.luxury-admin-brand h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.luxury-admin-brand span {
+  display: block;
+  margin-top: 5px;
+  color: #b59a67;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.luxury-admin-sidebar-label {
+  margin: 35px 10px 15px;
+  color: #858178;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* SIDEBAR NAVIGATION */
+
+.luxury-admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.luxury-admin-nav-item {
+  position: relative;
+  width: 100%;
+  min-height: 49px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  color: #b7b4ac;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.luxury-admin-nav-item:hover {
+  background: rgba(181,154,103,0.1);
+  color: #fff;
+}
+
+.luxury-admin-nav-item.active {
+  background: rgba(181,154,103,0.16);
+  color: #d7bd8b;
+}
+
+.admin-active-indicator {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  width: 3px;
+  height: 25px;
+  background: #b59a67;
+}
+
+/* SIDEBAR BOTTOM */
+
+.luxury-admin-sidebar-bottom {
+  margin-top: auto;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 5px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.admin-avatar,
+.admin-header-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #b59a67;
+  color: #171714;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+}
+
+.admin-profile strong {
+  display: block;
+  max-width: 155px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.admin-profile span {
+  display: block;
+  margin-top: 5px;
+  color: #99958c;
+  font-size: 9px;
+}
+
+.luxury-admin-logout {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: transparent;
+  color: #c8a6a1;
+  font-size: 12px;
+  transition: background 0.3s ease;
+}
+
+.luxury-admin-logout:hover {
+  background: rgba(255,255,255,0.07);
+}
+
+/* MAIN */
+
+.luxury-admin-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.luxury-admin-header {
+  min-height: 105px;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #ebe8df;
+}
+
+.luxury-admin-header > div:first-child > span {
+  color: #a18b64;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.luxury-admin-header h1 {
+  margin-top: 7px;
+  font-family: "Playfair Display", serif;
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-header-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #77736a;
+  font-size: 11px;
+}
+
+.admin-header-date svg {
+  color: #a18b64;
+}
+
+.admin-header-avatar {
+  width: 42px;
+  height: 42px;
+}
+
+/* CONTENT */
+
+.luxury-admin-content {
+  padding: 35px 40px;
+}
+
+/* WELCOME */
+
+.luxury-admin-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.admin-eyebrow {
+  color: #a18b64;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.luxury-admin-welcome h2 {
+  margin: 10px 0;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.luxury-admin-welcome p {
+  color: #89857d;
+  font-size: 12px;
+}
+
+.luxury-admin-refresh {
+  min-height: 42px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #171714;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+
+.luxury-admin-refresh:hover {
+  background: #b59a67;
+}
+
+.luxury-admin-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-spinning {
+  animation: adminRotate 1.5s linear infinite;
+}
+
+@keyframes adminRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* STATISTICS */
+
+.luxury-admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.luxury-stat-card {
+  min-width: 0;
+  padding: 23px;
+  background: #fff;
+  border: 1px solid #e9e5dc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.luxury-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.05);
+}
+
+.luxury-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.luxury-stat-top > span {
+  color: #858078;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.luxury-stat-icon {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f0e7;
+  color: #a18b64;
+}
+
+.luxury-stat-card h3 {
+  margin: 23px 0 9px;
+  color: #171714;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.luxury-stat-card p {
+  color: #99948b;
+  font-size: 10px;
+}
+
+.revenue-stat {
+  background: #171714;
+  border-color: #171714;
+}
+
+.revenue-stat .luxury-stat-top > span,
+.revenue-stat h3 {
+  color: #fff;
+}
+
+.revenue-stat p {
+  color: #bcb6a9;
+}
+
+.revenue-stat .luxury-stat-icon {
+  background: rgba(181,154,103,0.16);
+  color: #d5bb8b;
+}
+
+/* RECENT ORDERS */
+
+.luxury-admin-orders {
+  padding: 27px;
+  background: #fff;
+  border: 1px solid #e9e5dc;
+}
+
+.luxury-admin-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.luxury-admin-section-heading h2 {
+  margin: 9px 0 6px;
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.luxury-admin-section-heading p {
+  color: #918c83;
+  font-size: 11px;
+}
+
+.luxury-view-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #a18b64;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.luxury-view-all:hover {
+  color: #171714;
+}
+
+/* TABLE */
+
+.luxury-admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.luxury-admin-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+}
+
+.luxury-admin-table th {
+  padding: 15px 13px;
+  background: #f8f6f1;
+  color: #827c71;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.luxury-admin-table td {
+  padding: 17px 13px;
+  border-bottom: 1px solid #f0ede7;
+  color: #555149;
+  font-size: 11px;
+}
+
+.luxury-admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.luxury-admin-table td strong {
+  color: #24231f;
+}
+
+.admin-amount {
+  font-weight: 700;
+  color: #24231f !important;
+}
+
+.luxury-order-badge {
+  display: inline-flex;
+  padding: 7px 10px;
+  background: #f3efe5;
+  color: #8d7547;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.luxury-order-badge.delivered {
+  background: #edf5ee;
+  color: #327447;
+}
+
+.luxury-order-badge.shipped {
+  background: #edf2f8;
+  color: #42688c;
+}
+
+.luxury-order-badge.cancelled {
+  background: #fceeed;
+  color: #b74740;
+}
+
+.luxury-order-badge.confirmed {
+  background: #f4f0e5;
+  color: #987638;
+}
+
+.luxury-admin-message {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #99948b;
+  font-size: 12px;
+}
+
+.luxury-admin-error {
+  margin-bottom: 20px;
+  padding: 13px 15px;
+  background: #fff0ee;
+  color: #b42318;
+  font-size: 12px;
+}
+
+/* PERFORMANCE */
+
+.luxury-admin-performance {
+  margin-top: 25px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #eae5d9;
+}
+
+.performance-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #171714;
+  color: #d5bb8b;
+}
+
+.luxury-admin-performance span {
+  color: #92794f;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.luxury-admin-performance h3 {
+  margin: 7px 0;
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.luxury-admin-performance p {
+  color: #777167;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* MOBILE HEADER */
+
+.luxury-admin-mobile-header {
+  display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .luxury-admin-sidebar {
+    width: 230px;
+    min-width: 230px;
+  }
+
+  .luxury-admin-content {
+    padding: 28px 22px;
+  }
+
+  .luxury-admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .luxury-admin-layout {
+    display: block;
+  }
+
+  .luxury-admin-mobile-header {
+    min-height: 70px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #171714;
+    color: #fff;
+  }
+
+  .luxury-admin-mobile-header button {
+    background: transparent;
+    color: #d5bb8b;
+  }
+
+  .luxury-admin-mobile-header h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+
+  .luxury-admin-mobile-header > span {
+    color: #b59a67;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .luxury-admin-sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    min-width: 280px;
+    height: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .luxury-admin-sidebar.active {
+    transform: translateX(0);
+  }
+
+  .luxury-admin-header {
+    min-height: 85px;
+    padding: 18px 22px;
+  }
+
+  .luxury-admin-header h1 {
+    font-size: 25px;
+  }
+
+  .luxury-admin-content {
+    padding: 25px 18px;
+  }
+}
+
+@media (max-width: 550px) {
+  .luxury-admin-welcome {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .luxury-admin-welcome h2 {
+    font-size: 27px;
+  }
+
+  .luxury-admin-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .luxury-stat-card {
+    padding: 15px;
+  }
+
+  .luxury-stat-card h3 {
+    font-size: 23px;
+  }
+
+  .luxury-stat-top > span {
+    font-size: 8px;
+  }
+
+  .luxury-admin-orders {
+    padding: 17px;
+  }
+
+  .luxury-admin-section-heading h2 {
+    font-size: 22px;
+  }
+
+  .luxury-admin-performance {
+    padding: 18px;
+    align-items: flex-start;
+  }
+
+  .luxury-admin-performance h3 {
+    font-size: 19px;
+  }
+
+  .admin-header-date {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .luxury-admin-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================
+   VESTORA LUXURY ADMIN PRODUCTS
+========================================= */
+
+.luxury-products-page {
+  width: 100%;
+  animation: fadeIn 0.4s ease;
+}
+
+.luxury-products-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.luxury-products-heading h2 {
+  margin: 9px 0;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.luxury-products-heading p {
+  color: #89857d;
+  font-size: 12px;
+}
+
+.luxury-add-product-btn {
+  min-height: 45px;
+  padding: 0 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: #171714;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  transition: background 0.3s ease;
+}
+
+.luxury-add-product-btn:hover {
+  background: #b59a67;
+}
+
+/* SUMMARY */
+
+.luxury-product-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.luxury-product-summary-card {
+  padding: 19px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  border: 1px solid #e9e5dc;
+}
+
+.summary-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f0e7;
+  color: #a18b64;
+}
+
+.luxury-product-summary-card span {
+  color: #89847a;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.luxury-product-summary-card h3 {
+  margin-top: 7px;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+/* TOOLBAR */
+
+.luxury-product-toolbar {
+  min-height: 75px;
+  padding: 13px 17px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  border: 1px solid #e9e5dc;
+  margin-bottom: 18px;
+}
+
+.luxury-product-search {
+  flex: 1;
+  max-width: 450px;
+  min-height: 43px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e1d8;
+  color: #a18b64;
+}
+
+.luxury-product-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #171714;
+  font-size: 12px;
+  box-shadow: none;
+}
+
+.luxury-product-search button {
+  display: flex;
+  background: transparent;
+  color: #89857d;
+}
+
+.luxury-product-count {
+  margin-left: auto;
+  color: #89857d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.luxury-product-refresh {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f0e7;
+  color: #a18b64;
+}
+
+.luxury-product-refresh:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* TABLE */
+
+.luxury-products-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #e9e5dc;
+}
+
+.luxury-products-table {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+}
+
+.luxury-products-table th {
+  padding: 17px 20px;
+  background: #f8f6f1;
+  color: #827c71;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.luxury-products-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0ede7;
+  color: #555149;
+  font-size: 11px;
+}
+
+.luxury-products-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.luxury-products-table tbody tr:hover {
+  background: #fcfbf8;
+}
+
+/* PRODUCT INFO */
+
+.luxury-product-info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 200px;
+}
+
+.luxury-product-info img {
+  width: 57px;
+  height: 62px;
+  object-fit: cover;
+  background: #f4f0e7;
+}
+
+.luxury-product-info strong {
+  display: block;
+  max-width: 180px;
+  color: #25231f;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.luxury-product-info span {
+  display: block;
+  margin-top: 5px;
+  color: #a18b64;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.luxury-product-price {
+  color: #24231f;
+  font-weight: 700;
+}
+
+.luxury-product-price del {
+  display: block;
+  margin-top: 5px;
+  color: #aaa49a;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+/* STATUS */
+
+.luxury-product-status {
+  display: inline-flex;
+  padding: 7px 10px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.luxury-product-status.active {
+  background: #edf5ee;
+  color: #327447;
+}
+
+.luxury-product-status.inactive {
+  background: #fceeed;
+  color: #b74740;
+}
+
+/* ACTIONS */
+
+.luxury-product-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.luxury-product-actions button {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f0e7;
+  color: #9a8051;
+  transition: all 0.3s ease;
+}
+
+.luxury-product-actions button:hover {
+  background: #171714;
+  color: #fff;
+}
+
+.luxury-product-actions button:last-child:hover {
+  background: #a94442;
+}
+
+/* MODAL */
+
+.luxury-product-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.65);
+  overflow-y: auto;
+}
+
+.luxury-product-form-box {
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 20px 70px rgba(0,0,0,0.2);
+}
+
+.luxury-product-form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eeeae1;
+}
+
+.luxury-product-form-header h2 {
+  margin-top: 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.luxury-product-form-header button {
+  background: transparent;
+  color: #77736a;
+}
+
+.luxury-product-form-header button:disabled {
+  opacity: 0.5;
+}
+
+.luxury-form-field {
+  margin-bottom: 19px;
+}
+
+.luxury-form-field label {
+  display: block;
+  margin-bottom: 9px;
+  color: #49463e;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.luxury-form-field input,
+.luxury-form-field textarea,
+.luxury-form-field select {
+  width: 100%;
+  min-height: 45px;
+  padding: 11px 13px;
+  border: 1px solid #e1ddd5;
+  background: #fff;
+  color: #171714;
+  outline: none;
+  font-size: 12px;
+}
+
+.luxury-form-field textarea {
+  resize: vertical;
+}
+
+.luxury-form-field input:focus,
+.luxury-form-field textarea:focus,
+.luxury-form-field select:focus {
+  border-color: #b59a67;
+}
+
+.luxury-product-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.luxury-image-input {
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #e1ddd5;
+  color: #a18b64;
+}
+
+.luxury-image-input input {
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 11px;
+}
+
+.luxury-image-preview {
+  margin: 5px 0 20px;
+}
+
+.luxury-image-preview img {
+  width: 100px;
+  height: 110px;
+  object-fit: cover;
+  background: #f4f0e7;
+}
+
+.luxury-product-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 22px;
+  border-top: 1px solid #eeeae1;
+}
+
+.luxury-form-cancel,
+.luxury-form-save {
+  min-height: 45px;
+  padding: 0 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.luxury-form-cancel {
+  background: #f1eee7;
+  color: #555149;
+}
+
+.luxury-form-save {
+  background: #171714;
+  color: #fff;
+}
+
+.luxury-form-save:hover {
+  background: #b59a67;
+}
+
+.luxury-form-save:disabled,
+.luxury-form-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* EMPTY AND LOADING */
+
+.luxury-products-empty,
+.luxury-products-loading {
+  min-height: 300px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #e9e5dc;
+  text-align: center;
+  color: #a18b64;
+}
+
+.luxury-products-empty h3 {
+  color: #24231f;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.luxury-products-empty p,
+.luxury-products-loading {
+  color: #89857d;
+  font-size: 12px;
+}
+
+.luxury-products-empty .luxury-add-product-btn {
+  margin-top: 12px;
+}
+
+.luxury-products-error {
+  padding: 14px;
+  margin-bottom: 18px;
+  background: #fff0ee;
+  color: #b42318;
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .luxury-products-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .luxury-product-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-product-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .luxury-product-search {
+    max-width: none;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .luxury-product-count {
+    margin-left: 0;
+  }
+
+  .luxury-product-form-box {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .luxury-products-heading h2 {
+    font-size: 25px;
+  }
+
+  .luxury-product-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .luxury-product-modal {
+    padding: 10px;
+  }
+
+  .luxury-product-form-box {
+    max-height: 95vh;
+  }
+
+  .luxury-product-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .luxury-form-cancel,
+  .luxury-form-save {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   VESTORA LUXURY ADMIN ORDERS
+========================================= */
+
+.luxury-orders {
+  width: 100%;
+  color: #25241f;
+}
+
+.luxury-orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.luxury-eyebrow {
+  display: block;
+  color: #a58a58;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 10px;
+}
+
+.luxury-orders-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.luxury-orders-header p {
+  color: #88847b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.luxury-refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 19px;
+  background: #191916;
+  color: #fff;
+  border: 1px solid #191916;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.luxury-refresh-btn:hover:not(:disabled) {
+  background: #ad9364;
+  border-color: #ad9364;
+}
+
+.luxury-refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.luxury-order-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 28px;
+}
+
+.luxury-order-stat {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 20px 16px;
+  background: #fff;
+  border: 1px solid #eae6de;
+  transition: 0.3s ease;
+}
+
+.luxury-order-stat:hover {
+  border-color: #b59a67;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+}
+
+.luxury-order-stat-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1ede5;
+  color: #a58a58;
+}
+
+.luxury-order-stat-icon.pending-icon {
+  background: #fff4df;
+  color: #b27a24;
+}
+
+.luxury-order-stat-icon.shipped-icon {
+  background: #eaf1fa;
+  color: #537ca9;
+}
+
+.luxury-order-stat-icon.delivered-icon {
+  background: #eaf5ed;
+  color: #568b63;
+}
+
+.luxury-order-stat-icon.revenue-icon {
+  background: #f0ecf7;
+  color: #79629e;
+}
+
+.luxury-order-stat span {
+  display: block;
+  color: #89857d;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  margin-bottom: 7px;
+}
+
+.luxury-order-stat h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 600;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.luxury-orders-panel {
+  background: #fff;
+  border: 1px solid #eae6de;
+}
+
+.luxury-orders-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-bottom: 1px solid #eeeae3;
+}
+
+.luxury-orders-panel-header h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.luxury-orders-panel-header p {
+  font-size: 12px;
+  color: #918d84;
+  margin: 0;
+}
+
+.luxury-order-search {
+  width: 300px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  background: #faf9f6;
+  border: 1px solid #e9e5dd;
+  color: #9a8b70;
+}
+
+.luxury-order-search:focus-within {
+  border-color: #b59a67;
+}
+
+.luxury-order-search input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  color: #25241f;
+}
+
+.luxury-orders-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.luxury-orders-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+}
+
+.luxury-orders-table th {
+  padding: 15px 18px;
+  background: #faf9f6;
+  color: #8a857b;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.luxury-orders-table td {
+  padding: 18px;
+  border-bottom: 1px solid #f0ede7;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.luxury-orders-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.luxury-orders-table tbody tr:hover {
+  background: #fcfbf8;
+}
+
+.luxury-orders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.luxury-order-id {
+  font-weight: 700;
+  color: #a58a58;
+}
+
+.luxury-customer-name {
+  font-weight: 600;
+  color: #292820;
+}
+
+.luxury-customer-email,
+.luxury-order-date {
+  color: #858178;
+}
+
+.luxury-order-amount {
+  font-weight: 700;
+  color: #292820;
+  white-space: nowrap;
+}
+
+.luxury-order-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 11px;
+  border-radius: 2px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.luxury-order-status.status-pending {
+  background: #fff3dc;
+  color: #a66c18;
+}
+
+.luxury-order-status.status-confirmed {
+  background: #eaf0fa;
+  color: #4b6f9d;
+}
+
+.luxury-order-status.status-shipped {
+  background: #eaf0fa;
+  color: #4b6f9d;
+}
+
+.luxury-order-status.status-delivered {
+  background: #e8f4eb;
+  color: #478052;
+}
+
+.luxury-order-status.status-cancelled {
+  background: #fbeaea;
+  color: #b34e4e;
+}
+
+.luxury-order-status-select {
+  min-width: 125px;
+  padding: 9px 10px;
+  background: #fff;
+  border: 1px solid #e5e0d7;
+  outline: none;
+  color: #454239;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.luxury-order-status-select:focus {
+  border-color: #b59a67;
+}
+
+.luxury-order-status-select:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.luxury-updating-text {
+  display: block;
+  margin-top: 5px;
+  color: #a58a58;
+  font-size: 10px;
+}
+
+.luxury-orders-message {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 30px;
+  color: #a58a58;
+  text-align: center;
+}
+
+.luxury-orders-message h3 {
+  margin: 0;
+  color: #292820;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+}
+
+.luxury-orders-message p {
+  margin: 0;
+  color: #89857d;
+  font-size: 13px;
+}
+
+.luxury-orders-error {
+  color: #b34e4e;
+}
+
+.luxury-orders-error button {
+  padding: 10px 20px;
+  margin-top: 8px;
+  background: #191916;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.luxury-spin {
+  animation: luxuryOrdersSpin 1s linear infinite;
+}
+
+@keyframes luxuryOrdersSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .luxury-order-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .luxury-orders-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .luxury-orders-header h2 {
+    font-size: 25px;
+  }
+
+  .luxury-order-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .luxury-orders-panel-header {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  .luxury-order-search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .luxury-order-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-order-stat {
+    padding: 15px;
+  }
+}
+
+/* =========================================
+   VESTORA LUXURY ADMIN CUSTOMERS
+========================================= */
+
+.luxury-customers {
+  width: 100%;
+  color: #25241f;
+}
+
+.luxury-customers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.luxury-customers-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.luxury-customers-header p {
+  color: #88847b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.luxury-customer-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.luxury-customer-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 21px 17px;
+  background: #fff;
+  border: 1px solid #eae6de;
+  transition: 0.3s ease;
+}
+
+.luxury-customer-stat:hover {
+  border-color: #b59a67;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+}
+
+.luxury-customer-stat-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1ede5;
+  color: #a58a58;
+}
+
+.luxury-customer-stat-icon.orders-icon {
+  background: #eaf0fa;
+  color: #537ca9;
+}
+
+.luxury-customer-stat-icon.spending-icon {
+  background: #eaf5ed;
+  color: #568b63;
+}
+
+.luxury-customer-stat-icon.average-icon {
+  background: #f0ecf7;
+  color: #79629e;
+}
+
+.luxury-customer-stat span {
+  display: block;
+  color: #89857d;
+  font-size: 10px;
+  margin-bottom: 7px;
+}
+
+.luxury-customer-stat h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.luxury-customers-panel {
+  background: #fff;
+  border: 1px solid #eae6de;
+}
+
+.luxury-customers-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-bottom: 1px solid #eeeae3;
+}
+
+.luxury-customers-panel-header h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.luxury-customers-panel-header p {
+  color: #918d84;
+  font-size: 12px;
+  margin: 0;
+}
+
+.luxury-customer-search {
+  width: 320px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  background: #faf9f6;
+  border: 1px solid #e9e5dd;
+  color: #9a8b70;
+}
+
+.luxury-customer-search:focus-within {
+  border-color: #b59a67;
+}
+
+.luxury-customer-search input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+  color: #25241f;
+}
+
+.luxury-customers-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.luxury-customers-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: collapse;
+}
+
+.luxury-customers-table th {
+  padding: 15px 17px;
+  background: #faf9f6;
+  color: #8a857b;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.luxury-customers-table td {
+  padding: 17px;
+  border-bottom: 1px solid #f0ede7;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.luxury-customers-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.luxury-customers-table tbody tr:hover {
+  background: #fcfbf8;
+}
+
+.luxury-customers-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.luxury-customer-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 145px;
+  font-weight: 600;
+  color: #292820;
+}
+
+.luxury-customer-avatar {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1ede5;
+  color: #a58a58;
+  border-radius: 50%;
+}
+
+.luxury-customer-id {
+  color: #a58a58;
+  font-weight: 700;
+}
+
+.luxury-customer-email,
+.luxury-customer-phone,
+.luxury-customer-date {
+  color: #858178;
+}
+
+.luxury-customer-orders {
+  display: inline-flex;
+  min-width: 30px;
+  justify-content: center;
+  padding: 6px 9px;
+  background: #f4f1eb;
+  color: #65583f;
+  font-weight: 600;
+}
+
+.luxury-customer-spent {
+  color: #292820;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.luxury-customers-message {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 30px;
+  color: #a58a58;
+  text-align: center;
+}
+
+.luxury-customers-message h3 {
+  margin: 0;
+  color: #292820;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+}
+
+.luxury-customers-message p {
+  margin: 0;
+  color: #89857d;
+  font-size: 13px;
+}
+
+.luxury-customer-error {
+  color: #b34e4e;
+}
+
+.luxury-customer-error button {
+  padding: 10px 20px;
+  margin-top: 8px;
+  background: #191916;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.luxury-customer-spin {
+  animation: luxuryCustomerSpin 1s linear infinite;
+}
+
+@keyframes luxuryCustomerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .luxury-customer-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .luxury-customers-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .luxury-customers-header h2 {
+    font-size: 25px;
+  }
+
+  .luxury-customers-panel-header {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  .luxury-customer-search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .luxury-customer-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   VESTORA LUXURY ADMIN ANALYTICS
+========================================= */
+
+.luxury-analytics {
+  width: 100%;
+  color: #25241f;
+}
+
+.luxury-analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.luxury-analytics-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.luxury-analytics-header p {
+  color: #88847b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.luxury-analytics-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.luxury-analytics-stat {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 21px 16px;
+  background: #fff;
+  border: 1px solid #eae6de;
+  transition: 0.3s ease;
+}
+
+.luxury-analytics-stat:hover {
+  border-color: #b59a67;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+}
+
+.luxury-analytics-stat-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1ede5;
+  color: #a58a58;
+}
+
+.luxury-analytics-stat-icon.orders {
+  background: #eaf0fa;
+  color: #537ca9;
+}
+
+.luxury-analytics-stat-icon.products {
+  background: #eaf5ed;
+  color: #568b63;
+}
+
+.luxury-analytics-stat-icon.performance {
+  background: #f0ecf7;
+  color: #79629e;
+}
+
+.luxury-analytics-stat span {
+  display: block;
+  color: #89857d;
+  font-size: 10px;
+  margin-bottom: 7px;
+}
+
+.luxury-analytics-stat h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.luxury-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.luxury-analytics-card {
+  min-width: 0;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #eae6de;
+  transition: 0.3s ease;
+}
+
+.luxury-analytics-card:hover {
+  border-color: #d4c5a7;
+}
+
+.luxury-analytics-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.luxury-analytics-label {
+  display: block;
+  color: #a58a58;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  margin-bottom: 8px;
+}
+
+.luxury-analytics-card-heading h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.luxury-analytics-card-heading p {
+  color: #918d84;
+  font-size: 11px;
+  margin: 0;
+}
+
+.luxury-chart-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #f1ede5;
+  color: #a58a58;
+}
+
+.luxury-sales-total {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.luxury-sales-total span {
+  color: #918d84;
+  font-size: 11px;
+}
+
+.luxury-sales-total strong {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #28271f;
+}
+
+.luxury-sales-chart {
+  height: 235px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 13px;
+  padding: 12px 5px 0;
+  border-bottom: 1px solid #eae6de;
+}
+
+.luxury-sales-bar-item {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.luxury-sales-bar-value {
+  max-width: 100%;
+  overflow: hidden;
+  color: #89857d;
+  font-size: 9px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.luxury-sales-bar-track {
+  width: 65%;
+  max-width: 42px;
+  height: 145px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: #f4f1eb;
+}
+
+.luxury-sales-bar-fill {
+  width: 100%;
+  min-height: 5px;
+  background: linear-gradient(180deg, #c6ad7c, #94794b);
+  transition: height 0.7s ease;
+  animation: luxuryAnalyticsGrow 0.8s ease;
+}
+
+.luxury-sales-month {
+  color: #77736b;
+  font-size: 10px;
+  padding-bottom: 9px;
+  white-space: nowrap;
+}
+
+@keyframes luxuryAnalyticsGrow {
+  from {
+    height: 0;
+  }
+}
+
+.luxury-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.luxury-status-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.luxury-status-name {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #555147;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.luxury-status-name strong,
+.luxury-status-item-top strong {
+  font-size: 13px;
+  color: #292820;
+}
+
+.luxury-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #b59a67;
+}
+
+.luxury-status-dot.pending,
+.luxury-status-fill.pending {
+  background: #c99b4d;
+}
+
+.luxury-status-dot.confirmed,
+.luxury-status-fill.confirmed {
+  background: #6f91bd;
+}
+
+.luxury-status-dot.shipped,
+.luxury-status-fill.shipped {
+  background: #8a83b8;
+}
+
+.luxury-status-dot.delivered,
+.luxury-status-fill.delivered {
+  background: #6eaa7b;
+}
+
+.luxury-status-dot.cancelled,
+.luxury-status-fill.cancelled {
+  background: #c97979;
+}
+
+.luxury-status-track {
+  height: 7px;
+  overflow: hidden;
+  background: #f0ede7;
+}
+
+.luxury-status-fill {
+  height: 100%;
+  min-width: 0;
+  transition: width 0.6s ease;
+}
+
+.luxury-status-percentage {
+  display: block;
+  margin-top: 6px;
+  color: #99948a;
+  font-size: 10px;
+}
+
+.luxury-top-products-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.luxury-top-product {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0ede7;
+}
+
+.luxury-top-product:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.luxury-product-rank {
+  width: 33px;
+  height: 33px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1ede5;
+  color: #a58a58;
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.luxury-top-product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.luxury-top-product-info h4 {
+  margin: 0 0 5px;
+  color: #292820;
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.luxury-top-product-info span {
+  color: #918d84;
+  font-size: 10px;
+}
+
+.luxury-top-product-revenue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  text-align: right;
+}
+
+.luxury-top-product-revenue strong {
+  color: #292820;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.luxury-top-product-revenue small {
+  color: #99948a;
+  font-size: 10px;
+}
+
+.luxury-top-products-card {
+  grid-column: 1 / -1;
+}
+
+.luxury-analytics-empty {
+  min-height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #918d84;
+  font-size: 13px;
+}
+
+.luxury-analytics-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 15px 18px;
+  background: #f3f0e9;
+  color: #8c7954;
+}
+
+.luxury-analytics-note p {
+  margin: 0;
+  color: #777064;
+  font-size: 11px;
+}
+
+.luxury-analytics-loading,
+.luxury-analytics-error {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #a58a58;
+  text-align: center;
+}
+
+.luxury-analytics-loading p,
+.luxury-analytics-error p {
+  color: #89857d;
+  font-size: 13px;
+}
+
+.luxury-analytics-error h3 {
+  font-family: "Playfair Display", serif;
+  color: #292820;
+  font-size: 23px;
+  margin: 0;
+}
+
+.luxury-analytics-error button {
+  padding: 11px 22px;
+  background: #191916;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.luxury-analytics-spin {
+  animation: luxuryAnalyticsSpin 1s linear infinite;
+}
+
+@keyframes luxuryAnalyticsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .luxury-analytics-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .luxury-analytics-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .luxury-analytics-header h2 {
+    font-size: 25px;
+  }
+
+  .luxury-analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-top-products-card {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .luxury-analytics-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-analytics-card {
+    padding: 18px;
+  }
+
+  .luxury-sales-bar-value {
+    font-size: 8px;
+  }
+}
+
+/* ================================
+   VESTORA LUXURY FOOTER
+================================ */
+
+.footer {
+  background: #171714;
+  color: #f8f6f1;
+  padding: 75px 7% 25px;
+  margin-top: 80px;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 55px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 65px;
+}
+
+.footer-brand {
+  max-width: 340px;
+}
+
+.footer-logo {
+  color: #f8f6f1;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.footer-logo span {
+  color: #b59a67;
+}
+
+.footer-tagline {
+  color: #b59a67;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.footer-description {
+  color: #aaa69e;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-top: 22px;
+  max-width: 300px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 13px;
+  margin-top: 25px;
+}
+
+.footer-socials a {
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f8f6f1;
+  border: 1px solid #514c42;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background: #b59a67;
+  color: #171714;
+  border-color: #b59a67;
+  transform: translateY(-3px);
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.footer-column h3 {
+  color: #b59a67;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.footer-column a,
+.footer-column p {
+  color: #c5c1b8;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #b59a67;
+  padding-left: 5px;
+}
+
+.footer-column p {
+  line-height: 1.7;
+  margin: 0;
+}
+
+.back-to-top {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  margin-top: 12px;
+  padding: 11px 0;
+  border: none;
+  border-bottom: 1px solid #b59a67;
+  background: transparent;
+  color: #b59a67;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 23px;
+  border-top: 1px solid #403d35;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-bottom p,
+.footer-bottom-link {
+  color: #969187;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  margin: 0;
+}
+
+.footer-bottom-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #b59a67;
+}
+
+.footer-bottom-link:hover {
+  color: #fff;
+}
+
+/* FOOTER RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+  }
+}
+
+@media (max-width: 550px) {
+  .footer {
+    padding: 55px 7% 22px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 38px 22px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-logo {
+    font-size: 32px;
+  }
+
+  .footer-column h3 {
+    font-size: 10px;
+  }
+
+  .footer-column a,
+  .footer-column p {
+    font-size: 12px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  .footer-bottom-text {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+}
+
+/* =========================================
+   VESTORA - ADMIN ORDER TRACKING
+========================================= */
+
+.luxury-tracking-section {
+  margin-top: 35px;
+}
+
+.luxury-tracking-heading {
+  margin-bottom: 22px;
+}
+
+.luxury-tracking-heading h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+  color: #171714;
+  margin: 8px 0;
+}
+
+.luxury-tracking-heading p {
+  color: #858078;
+  font-size: 14px;
+}
+
+.luxury-tracking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.luxury-tracking-card {
+  background: #fffefa;
+  border: 1px solid #e9e3d8;
+  border-radius: 13px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(30, 25, 15, 0.035);
+}
+
+.luxury-tracking-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee9df;
+}
+
+.luxury-tracking-card-header h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  color: #171714;
+  margin: 5px 0;
+}
+
+.luxury-tracking-card-header p {
+  color: #858078;
+  font-size: 13px;
+  margin: 0;
+}
+
+.luxury-tracking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+  padding-top: 20px;
+}
+
+.luxury-tracking-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: #454139;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.luxury-tracking-form label span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.luxury-tracking-form input,
+.luxury-tracking-form select {
+  width: 100%;
+  min-width: 0;
+  height: 43px;
+  padding: 0 12px;
+  border: 1px solid #e5dfd4;
+  border-radius: 6px;
+  background: #fff;
+  color: #292720;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.luxury-tracking-form input:focus,
+.luxury-tracking-form select:focus {
+  border-color: #b59a67;
+  box-shadow: 0 0 0 3px rgba(181, 154, 103, 0.12);
+}
+
+.luxury-tracking-current {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px;
+  border-radius: 6px;
+  background: #f7f4ed;
+  color: #777064;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.luxury-tracking-current strong {
+  color: #292720;
+}
+
+.luxury-save-tracking {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  height: 45px;
+  background: #171714;
+  color: #fff;
+  border: 1px solid #171714;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.luxury-save-tracking:hover:not(:disabled) {
+  background: #b59a67;
+  border-color: #b59a67;
+}
+
+.luxury-save-tracking:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .luxury-tracking-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .luxury-tracking-card {
+    padding: 17px;
+  }
+
+  .luxury-tracking-form {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-tracking-current,
+  .luxury-save-tracking {
+    grid-column: 1;
+  }
+
+  .luxury-tracking-card-header {
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   VESTORA CUSTOMER ORDER TRACKING
+========================================= */
+
+.luxury-track-order-btn {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 20px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #171714;
+  color: #fff;
+  border: 1px solid #171714;
+  border-radius: 5px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.luxury-track-order-btn:hover {
+  background: #b59a67;
+  border-color: #b59a67;
+}
+
+.luxury-tracking-details {
+  margin-top: 22px;
+  padding: 28px;
+  background: #f9f7f2;
+  border: 1px solid #e9e3d8;
+  border-radius: 7px;
+}
+
+.luxury-tracking-title {
+  margin-bottom: 25px;
+}
+
+.luxury-tracking-title > span {
+  color: #a28b60;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.luxury-tracking-title h3 {
+  margin: 7px 0 0;
+  color: #171714;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+}
+
+.luxury-tracking-timeline {
+  position: relative;
+  margin: 0 0 30px 8px;
+}
+
+.luxury-timeline-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  min-height: 82px;
+  opacity: 0.45;
+}
+
+.luxury-timeline-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 39px;
+  width: 2px;
+  height: 43px;
+  background: #d9d3c8;
+}
+
+.luxury-timeline-step.completed {
+  opacity: 1;
+}
+
+.luxury-timeline-step.completed:not(:last-child)::after {
+  background: #b59a67;
+}
+
+.luxury-timeline-marker {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e9e5dc;
+  color: #898274;
+}
+
+.luxury-timeline-step.completed .luxury-timeline-marker {
+  background: #b59a67;
+  color: #fff;
+}
+
+.luxury-timeline-content {
+  flex: 1;
+  padding-top: 2px;
+}
+
+.luxury-timeline-content h4 {
+  margin: 0 0 5px;
+  color: #27251f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.luxury-timeline-content p {
+  margin: 0;
+  color: #858078;
+  font-size: 12px;
+}
+
+.timeline-completed-label {
+  color: #a28b60;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.luxury-shipment-information {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e6e0d5;
+}
+
+.luxury-shipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.luxury-shipment-grid > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 17px;
+  background: #fffefa;
+  border: 1px solid #eee8de;
+  border-radius: 5px;
+}
+
+.luxury-shipment-grid > div > svg {
+  color: #b59a67;
+}
+
+.luxury-shipment-grid span {
+  color: #898274;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.luxury-shipment-grid strong {
+  color: #292720;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.luxury-tracking-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 25px 0 0;
+  color: #898274;
+  font-size: 12px;
+}
+
+.luxury-tracking-loading,
+.luxury-tracking-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 150px;
+  color: #898274;
+  text-align: center;
+}
+
+.luxury-tracking-loading p {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.luxury-tracking-error button {
+  padding: 10px 20px;
+  background: #171714;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.luxury-tracking-notice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.cancelled-notice {
+  background: #f5e9e7;
+  color: #a34d42;
+}
+
+.returned-notice {
+  background: #eeeae1;
+  color: #786b51;
+}
+
+.luxury-tracking-notice strong {
+  font-size: 14px;
+}
+
+.luxury-tracking-notice p {
+  margin: 5px 0 0;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .luxury-tracking-details {
+    padding: 18px;
+  }
+
+  .luxury-shipment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .luxury-timeline-step {
+    gap: 12px;
+  }
+
+  .timeline-completed-label {
+    display: none;
+  }
+}
