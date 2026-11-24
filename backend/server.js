@@ -14,6 +14,7 @@ const myOrderRoutes = require("./routes/myOrderRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const adminProductRoutes = require("./routes/adminProductRoutes");
 const reviewRoutes = require("./routes/reviewRoutes");
+
 const app = express();
 
 // Middleware
@@ -32,6 +33,7 @@ app.use("/api/my-orders", myOrderRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/admin/products", adminProductRoutes);
 app.use("/api/reviews", reviewRoutes);
+
 // Health Check
 app.get("/", (req, res) => {
   res.json({
@@ -49,27 +51,26 @@ app.use((req, res) => {
   });
 });
 
-// Start Server
-const PORT = process.env.PORT || 5000;
+// Local development only
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
 
-async function startServer() {
-  try {
-    await testDatabaseConnection();
+  async function startServer() {
+    try {
+      await testDatabaseConnection();
 
-    app.listen(PORT, () => {
-      console.log("--------------------------------");
-      console.log("VESTORA BACKEND STARTED");
-      console.log(`Server: http://localhost:${PORT}`);
-      console.log(`Products: http://localhost:${PORT}/api/products`);
-      console.log(`Auth: http://localhost:${PORT}/api/auth`);
-      console.log(`Orders: http://localhost:${PORT}/api/orders`);
-      console.log("--------------------------------");
-    });
-
-  } catch (error) {
-    console.error("Server startup failed:", error.message);
-    process.exit(1);
+      app.listen(PORT, () => {
+        console.log("VESTORA BACKEND STARTED");
+        console.log(`Server: http://localhost:${PORT}`);
+      });
+    } catch (error) {
+      console.error("Server startup failed:", error.message);
+      process.exit(1);
+    }
   }
+
+  startServer();
 }
 
-startServer();
+// Export Express app for Vercel
+module.exports = app;
